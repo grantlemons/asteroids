@@ -20,6 +20,7 @@ fn main() {
 fn custom_window_plugin() -> WindowPlugin {
     WindowPlugin {
         window: WindowDescriptor {
+            title: "Asteroids Game -- github.com/grantlemons/asteroids".to_string(),
             cursor_visible: false,
             fit_canvas_to_parent: true,
             ..Default::default()
