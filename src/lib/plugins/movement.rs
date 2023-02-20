@@ -15,6 +15,7 @@ impl super::Plugin for MovementPlugin {
                 .with_system(apply_rotation)
                 .with_system(accelerate_components)
                 .with_system(transform_components)
+                .with_system(track_player)
                 .with_system(apply_position),
         );
     }
