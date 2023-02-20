@@ -10,7 +10,14 @@ const CLEAR: Color = Color::rgb(0.1, 0.1, 0.1);
 fn main() {
     App::new()
         .insert_resource(ClearColor(CLEAR))
-        .add_plugins(DefaultPlugins)
+        .add_plugins(DefaultPlugins.set(WindowPlugin {
+            window: WindowDescriptor {
+                cursor_visible: false,
+                fit_canvas_to_parent: true,
+                ..Default::default()
+            },
+            ..Default::default()
+        }))
         .add_plugin(MovementPlugin)
         .add_startup_system_to_stage(StartupStage::PreStartup, spawn_camera)
         .add_startup_system(spawn_player)
